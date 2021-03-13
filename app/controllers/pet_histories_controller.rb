@@ -13,10 +13,12 @@ class PetHistoriesController < ApplicationController
   # GET /pet_histories/new
   def new
     @pet_history = PetHistory.new
+    @pets = Pet.pluck :name, :id
   end
 
   # GET /pet_histories/1/edit
   def edit
+    @pets = Pet.pluck :name, :id
   end
 
   # POST /pet_histories or /pet_histories.json
